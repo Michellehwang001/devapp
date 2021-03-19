@@ -1,3 +1,3 @@
 Hello.
-It's my test Repository.
+This is my test Repository.
 Thank you for comming.
