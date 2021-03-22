@@ -12,5 +12,5 @@ void main() {
   int result = a * b;
   String c = '가로 $a, 세로 $b의 직사각형의 면적은 $result입니다.';
 
-  print('$c');
+  print (c);
 }
