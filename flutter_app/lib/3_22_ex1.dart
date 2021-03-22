@@ -9,8 +9,8 @@
 void main() {
   int a = 3;
   int b = 5;
-  int result = 3 * 5;
+  int result = a * b;
+  String c = '가로 $a, 세로 $b의 직사각형의 면적은 $result입니다.';
 
-  print('가로 $a, 세로 $b의 직사각형의 면적은 $result입니다.');
-
+  print('$c');
 }
