@@ -14,8 +14,11 @@ Now I have an app that I want to make related to real estate, so I started study
 And I plan to start a business and all of this will be recorded on gitHub.
 
 Often come to my gitHub and watch it~
-
+   
+# ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Michellehwang001&show_icons=true&theme=radical)
+   
 # Languages and Tools
+<!--
 <img src="https://img.shields.io/static/v1?label=1&message=Java&color=orange" />
 <img src="https://img.shields.io/static/v1?label=2&message=C&color=green" />
 <img src="https://img.shields.io/static/v1?label=3&message=JavaScript&color=red" />
@@ -29,7 +32,7 @@ Often come to my gitHub and watch it~
 <img src="https://img.shields.io/static/v1?label=11&message=Flutter&color=blue" />
 <img src="https://img.shields.io/static/v1?label=12&message=SQL&color=yellow" />
 <img src="https://img.shields.io/static/v1?label=13&message=BootStrap&color=blueviolet" />
-
+-->
 
 <div align="center">  
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/c-original.svg" alt="C" height="25" />  
@@ -46,6 +49,10 @@ Often come to my gitHub and watch it~
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/php-original.svg" alt="PHP" height="25" />  
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/jquery.png" alt="jQuery" height="25" />  
 </div>  
+
+
+
+
 
 # Contact with me
 <jimin_ma@naver.com>   
