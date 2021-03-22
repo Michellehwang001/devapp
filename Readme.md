@@ -19,7 +19,7 @@ Often come to my gitHub and watch it~
 <img src="https://img.shields.io/static/v1?label=1&message=Java&color=orange" />
 <img src="https://img.shields.io/static/v1?label=2&message=C&color=green" />
 <img src="https://img.shields.io/static/v1?label=3&message=JavaScript&color=red" />
-<img src="https://img.shields.io/static/v1?label=4&message=HTML5&color=blue" />   
+<img src="https://img.shields.io/static/v1?label=4&message=HTML5&color=blue" />
 <img src="https://img.shields.io/static/v1?label=5&message=CSS&color=green" />
 <img src="https://img.shields.io/static/v1?label=6&message=PHP&color=yellow" />
 <img src="https://img.shields.io/static/v1?label=7&message=ASP&color=yellowgreen" />
@@ -30,6 +30,22 @@ Often come to my gitHub and watch it~
 <img src="https://img.shields.io/static/v1?label=12&message=SQL&color=yellow" />
 <img src="https://img.shields.io/static/v1?label=13&message=BootStrap&color=blueviolet" />
 
+
+<div align="center">  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/c-original.svg" alt="C" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/javascript-original.svg" alt="JavaScript" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/css3-original-wordmark.svg" alt="CSS3" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/linux-original.svg" alt="Linux" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/flutterio-icon.svg" alt="Flutter" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/git-scm-icon.svg" alt="Git" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/dartlang-icon.svg" alt="Dart" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/mysql-original-wordmark.svg" alt="MySQL" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/bootstrap-plain.svg" alt="Bootstrap" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/java-original-wordmark.svg" alt="Java" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/php-original.svg" alt="PHP" height="25" />  
+<img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/jquery.png" alt="jQuery" height="25" />  
+</div>  
 
 # Contact with me
 <jimin_ma@naver.com>   
