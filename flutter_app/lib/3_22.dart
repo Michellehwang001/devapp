@@ -31,4 +31,11 @@ void main() {
   if(g == null){
     print('g는 $g');
   }
+
+  final double tax = 1.1;
+  int fax = 5;
+  print('5만원짜리를 4만원으로 할인합니다.');
+  fax = 4;
+  print('팩스의 새로운 가격은(세금포함) ${fax * tax}만원');
+
 }
