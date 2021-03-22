@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main() {
   int a = 10;
   int b = 20;
@@ -28,7 +30,7 @@ void main() {
   var nameList2 = ['홍길동', '한석봉'];
 
   int g;
-  if(g == null){
+  if (g == null) {
     print('g는 $g');
   }
 
@@ -38,4 +40,35 @@ void main() {
   fax = 4;
   print('팩스의 새로운 가격은(세금포함) ${fax * tax}만원');
 
+  forTest();
+
+  var result = fibonacci(20);
+
+  print(result);
+
+  dice();
+}
+
+void forTest() {
+  List<String> names = ['한석봉', '한석봉', '한석봉1'];
+
+  for (var name in names) {
+    print('내 이름은 $name 입니다.');
+  }
+
+  // names List 에서 1이 포함된 것들 모두 프린트.. 오~~ 신기~
+  names.where((name) => name.contains('1')).forEach(print);
+
+}
+
+int fibonacci(int n) {
+  if (n == 0 || n == 1) return n;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+
+// 주사위
+void dice(){
+  var rng = new Random();
+  print(rng.nextInt(6) + 1); //1~6
 }
