@@ -13,7 +13,7 @@ void main() {
   double tDouble = 2.3;
 
   // 문자열
-  String name = '황혜정';
+  String name = 'Michelle Hwang';
 
   // [진위 (참, 거짓)]
   bool isMarried = true;
