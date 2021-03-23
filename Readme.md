@@ -16,6 +16,8 @@ The reason I start studing flutter was I want to make an application related to 
 After that I plan to start a business and all of this will be recorded on gitHub.
 
 Often come to my gitHub and watch my step. 
+
+Thank you~ <img src="./images/laughing.svg" width="30" height="30"\>
    
 # ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Michellehwang001&show_icons=true&theme=radical)
    

@@ -20,6 +20,7 @@ void main() {
     print('삭제합니다.');
   } else if (selected == '4') {
     print('변경합니다.');
-  } else
+  } else {
     print('1~4의 값을 입력하세요!!!');
+  }
 }
