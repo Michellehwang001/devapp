@@ -12,18 +12,21 @@ void main() {
   String ageString = stdin.readLineSync();
   int age = int.parse(ageString);
 
-
   print('점꾀가 나왔습니다!!');
   var fortune = printFortune();
-  print('$age살의 $name, 당신의 운세번호는 $fortune 입니다.');
+  print('$age살의 $name, 당신의 운세 $fortune 입니다.');
 }
 
-String printFortune(){
+String printFortune() {
   var rng = new Random();
-  int fortune = rng.nextInt(3)+1;
+  int fortune = rng.nextInt(3) + 1;
 
-  if(fortune == 1)  return '대박';
-  else if(fortune == 2) return '중박';
-  else if(fortune == 3) return '보통';
-  else return '망';
+  if (fortune == 1)
+    return '대박';
+  else if (fortune == 2)
+    return '중박';
+  else if (fortune == 3)
+    return '보통';
+  else
+    return '망';
 }
