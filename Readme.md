@@ -17,7 +17,7 @@ After that I plan to start a business and all of this will be recorded on gitHub
 
 Often come to my gitHub and watch my step. 
 
-Thank you~ ![Thank you](./images/laughing.svg) 
+Thank you~ ![Thank you](./images/laughing.svg){: width="100" height="100"} 
 
    
 # ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Michellehwang001&show_icons=true&theme=radical)
