@@ -7,19 +7,19 @@
 
 import 'dart:io';
 
-void main(){
+void main() {
   print('[메뉴] 1:검색 2:등록 3:삭제 4:변경 >');
 
   String selected = stdin.readLineSync();
 
-  if (selected == '1'){
+  if (selected == '1') {
     print('검색합니다.');
-  }else if(selected == '2'){
+  } else if (selected == '2') {
     print('등록합니다.');
-  }else if(selected == '3'){
+  } else if (selected == '3') {
     print('삭제합니다.');
-  }else if(selected == '4'){
+  } else if (selected == '4') {
     print('변경합니다.');
-  }else
+  } else
     print('1~4의 값을 입력하세요!!!');
 }

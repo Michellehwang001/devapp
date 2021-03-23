@@ -5,15 +5,17 @@ I am currently learning ***Flutter*** at Semin Vocational College.
    
 I have experience working as a web programmer from 2000 to 2008.   
    
-After getting married, I studied as a social worker, got a real estate agent license, and worked in related jobs.   
-   
-Now I have an app that I want to make related to real estate, so I started studying Flutter.   
-   
-***After studying Flutter***, I will study ***Spring Boot***, ***Kubernetes***.
-   
-And I plan to start a business and all of this will be recorded on gitHub.
+After getting married, I studied as a social worker, got a real estate agent license 
 
-Often come to my gitHub and watch it~
+and worked job related in social worker.    
+   
+The reason I start studing flutter was I want to make an application related to real estate.   
+   
+***After studying Flutter***, I'm planning to study ***Spring Boot***, ***Kubernetes***.
+   
+After that I plan to start a business and all of this will be recorded on gitHub.
+
+Often come to my gitHub and watch my step. 
    
 # ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Michellehwang001&show_icons=true&theme=radical)
    
