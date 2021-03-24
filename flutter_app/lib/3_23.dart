@@ -1,7 +1,7 @@
 import 'dart:math';
 
 void main() {
-  //print('주사위7 : ${dice2(100)}');
+  print('주사위7 : ${dice2(100)}');
   print('주사위7 : ${dice(start: 5, end: 7)}');
   print('주사위7 : ${dice(start: 1)}');
 }
@@ -20,3 +20,7 @@ int dice({int start, int end}) {
 
 // 람다식 : 함수의 내용이 한줄일 경우 다음과 같이 줄여 쓸 수 있다.
 int dice2(int num) => Random().nextInt(num) + 1;
+
+int dice3(int num) {
+  return Random().nextInt(num) + 1;
+}

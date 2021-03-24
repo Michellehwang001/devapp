@@ -1,66 +1,71 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:mailer/mailer.dart';
+import 'package:mailer/smtp_server.dart';
 
-void main() {
-  runApp(MyApp());
-}
+main() async {
+  String username = 'jimin_ma@naver.com';
+  String password = 'hhj003';
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
-      ),
-      home: SendMail(),
-    );
-  }
-}
+  final smtpServer = naver(username, password);
+  // Use the SmtpServer class to configure an SMTP server:
+  // final smtpServer = SmtpServer('smtp.domain.com');
+  // See the named arguments of SmtpServer for further configuration
+  // options.
 
-class SendMail extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Send Email'),
-      ),
-      body: Column(
-        children: [
-          CupertinoButton(
-              child: Text('메일 보내기'),
-              onPressed: () {
-                _sendEmail();
-              } )
-        ],
-      ),
-    );
-  }
-}
-
-
-void _sendEmail() async {
-  final Email email = Email(
-    body: '',
-    subject: '[양파가족 문의]',
-    recipients: ['onionfamily.official@gmail.com'],
-    cc: [],
-    bcc: [],
-    attachmentPaths: [],
-    isHTML: false,
-  );
+  // Create our message.
+  final message = Message()
+    ..from = Address(username, 'Your name')
+    ..recipients.add('jimin_ma@naver.com')
+    ..ccRecipients.addAll([])
+    ..bccRecipients.add(Address('hwanghyejung001@gmail.com'))
+    ..subject = 'Test Dart Mailer library :: 😀 :: ${DateTime.now()}'
+    ..text = 'This is the plain text.\nThis is line 2 of the text part.'
+    ..html = "<h1>Test</h1>\n<p>Hey! Here's some HTML content</p>";
 
   try {
-    await FlutterEmailSender.send(email);
-  } catch (error) {
-    String title = "기본 메일 앱을 사용할 수 없기 때문에 앱에서 바로 문의를 전송하기 어려운 상황입니다.\n\n아래 이메일로 연락주시면 친절하게 답변해드릴게요 :)\n\nonionfamily.official@gmail.com";
-    String message = "";
-    _showErrorAlert(title: title, message: message);
+    final sendReport = await send(message, smtpServer);
+    print('Message sent: ' + sendReport.toString());
+  } on MailerException catch (e) {
+    print('Message not sent.');
+    for (var p in e.problems) {
+      print('Problem: ${p.code}: ${p.msg}');
+    }
   }
-}
+  // DONE
 
-void _showErrorAlert({String title, String message}) {
-  print('$title : $message');
+
+  // Let's send another message using a slightly different syntax:
+  //
+  // Addresses without a name part can be set directly.
+  // For instance `..recipients.add('destination@example.com')`
+  // If you want to display a name part you have to create an
+  // Address object: `new Address('destination@example.com', 'Display name part')`
+  // Creating and adding an Address object without a name part
+  // `new Address('destination@example.com')` is equivalent to
+  // adding the mail address as `String`.
+
+  // final equivalentMessage = Message()
+  //   ..from = Address(username, 'Your name')
+  //   ..recipients.add(Address('jimin_ma@naver.com'))
+  //   ..ccRecipients.addAll([Address('destCc1@example.com'), 'destCc2@example.com'])
+  //   ..bccRecipients.add('bccAddress@example.com')
+  //   ..subject = 'Test Dart Mailer library :: 😀 :: ${DateTime.now()}'
+  //   ..text = 'This is the plain text.\nThis is line 2 of the text part.'
+  //   ..html = "<h1>Test</h1>\n<p>Hey! Here's some HTML content</p>";
+  //
+  // final sendReport2 = await send(equivalentMessage, smtpServer);
+  //
+  // // Sending multiple messages with the same connection
+  // //
+  // // Create a smtp client that will persist the connection
+  // var connection = PersistentConnection(smtpServer);
+  //
+  // // Send the first message
+  // await connection.send(message);
+  //
+  // // send the equivalent message
+  // await connection.send(equivalentMessage);
+  //
+  // // close the connection
+  // await connection.close();
+
 }
