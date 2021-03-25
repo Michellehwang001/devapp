@@ -26,6 +26,9 @@ void main() {
   clericB.selfAid();
   clericB.selfAid();
   clericB.tellInfo();
+  clericB.selfAid();
+  clericB.pray(5);
+  clericB.tellInfo();
 }
 
 // Hero 타입을 새로 작성

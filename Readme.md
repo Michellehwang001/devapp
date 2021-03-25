@@ -20,23 +20,6 @@ Often come to my gitHub and watch my step.
 Thank you~  <img src="./images/laughing.svg" width="18" height="18">
 
    
-# 안녕하세요. 황혜정입니다. 👋
-
-현재 세민직업전문학교에서 오준석 선생님과 송동민 선생님께 ***Flutter***와 ***git***을 배우고 있습니다. 
-
-플러터는 매우 흥미롭고 재미있어 즐겁게 열심히 공부하고 있습니다. 
-   
-Flutter를 공부한 후에는 Spring Boot와 Kubernetes 를 좀 더 공부할 생각입니다. 
-
-2000년 ~ 2008년까지 웹프로그래머로 일한 경험이 있고.
-   
-결혼 후에는 사회복지사와 부동산관련 공부를 하고 자격취득 후 관련된 일을 한 경험이 있습니다. 
-
-Flutter공부를 시작한 이유는 부동산 관련한 앱을 만들고 창업을 하고자 합니다. 
-   
-이 모든 과정을 gitHub에 올릴 예정이니  종종 와서 지켜봐 주면 감사하겠습니다. <img src="./images/laughing.svg" width="19" height="19">   
-
-
 # ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Michellehwang001&show_icons=true&theme=radical)
    
 # Languages and Tools
