@@ -26,12 +26,24 @@ class HomePage extends StatelessWidget {
         title: Text('Bottom Navigation Bar'),
       ),
       body: Column(
+        children: [
+          
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-          )
+            icon: Icon(Icons.delete),
+            label: '삭제',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.save),
+            label: '저장',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: '추가',
+          ),
         ],
       ),
     );
