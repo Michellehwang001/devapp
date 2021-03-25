@@ -23,6 +23,8 @@ void main() {
 
   print('---- clericB 생성 ---');
   Cleric clericB = Cleric();
+  clericB.selfAid();
+  clericB.selfAid();
   clericB.tellInfo();
 }
 
@@ -50,10 +52,14 @@ class Cleric {
   final int maxHp = 50;
   final int maxMp = 10;
 
-  // MP5비하는 것으로 자신의 HP를 최대 HP까지 회복할 수 있다.
+  // MP 5소비로 자신의 HP를 최대 HP까지 회복할 수 있다.
   void selfAid() {
-    mp = mp - 5;
-    hp = maxHp;
+    if (mp < 5) {
+      print('mp가 5미만이라 selfAid를 사용할 수 없습니다. ');
+    } else {
+      mp = mp - 5;
+      hp = maxHp;
+    }
   }
 
   // mp 회복, 회복량은 기도한 시간(초)에 랜던하게 0~2포인트의 보정을 한 양이다.
@@ -65,7 +71,7 @@ class Cleric {
     int recoverMp = rnd.nextInt(3) + second;
 
     // MP 회복시켜 주기. 단 max값은 10
-    (mp + recoverMp > 10) ? mp = maxMp : mp = mp + recoverMp;
+    (mp + recoverMp > maxMp) ? mp = maxMp : mp = mp + recoverMp;
 
     // 실제로 회복한 량??
     return recoverMp;
