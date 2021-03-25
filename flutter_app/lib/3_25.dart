@@ -72,8 +72,7 @@ class Cleric {
   }
 
   void tellInfo() {
-    print ('현재 hp : $hp');
-    print ('현재 mp : $mp');
+    print('현재 hp : $hp');
+    print('현재 mp : $mp');
   }
-
 }
