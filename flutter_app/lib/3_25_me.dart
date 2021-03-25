@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          
+
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
