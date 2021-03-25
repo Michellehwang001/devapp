@@ -31,7 +31,6 @@ class HomePage extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: Text(''),
           )
         ],
       ),
