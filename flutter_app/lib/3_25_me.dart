@@ -11,9 +11,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.pink,
       ),
       home: HomePage(),
+    );
+  }
+}
+class ViewCheckList extends StatefulWidget {
+  @override
+  _ViewCheckListState createState() => _ViewCheckListState();
+}
+
+class _ViewCheckListState extends State<ViewCheckList> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
     );
   }
 }
@@ -27,6 +40,19 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Checkbox(
+                value: true,
+                onChanged: (value){
+                },
+              ),
+              Checkbox(value: true),
+              Checkbox(value: false),
+            ],
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

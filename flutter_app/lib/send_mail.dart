@@ -5,7 +5,7 @@ main() async {
   String username = 'jimin_ma@naver.com';
   String password = 'hhj003';
 
-  final smtpServer = naver(username, password);
+  final smtpServer = naver2(username, password);
   // Use the SmtpServer class to configure an SMTP server:
   // final smtpServer = SmtpServer('smtp.domain.com');
   // See the named arguments of SmtpServer for further configuration
@@ -13,7 +13,7 @@ main() async {
 
   // Create our message.
   final message = Message()
-    ..from = Address(username, 'Your name')
+    ..from = Address(username, '황혜정')
     ..recipients.add('jimin_ma@naver.com')
     ..ccRecipients.addAll([])
     ..bccRecipients.add(Address('hwanghyejung001@gmail.com'))
