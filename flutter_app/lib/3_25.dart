@@ -8,37 +8,37 @@ tellInfo() 같은 경우 처음에 class 안에 있었는데 캐릭터가 자신
 import 'package:flutter_app/character/cleric.dart';
 
 void main() {
-  Cleric clericA = Cleric();
-  clericA.name = 'A';
-
-  print('---- clericA의 초기값 ----');
-  tellInfo(clericA);
-
-  // 공격당해서 hp -20;
-  clericA.hp = clericA.hp - 20;
-  print('---- cleric 공격당한 후 정보 ---');
-  tellInfo(clericA);
-
-  print('--- selfAid 후 hp 회복 ----');
-  (clericA.selfAid())
-      ? print('hp 회복 했습니다.')
-      : print('mp가 5이하라 selfAid()가 실패했습니다.');
-  tellInfo(clericA);
-
-  print('--- 3초 기도 ---');
-  int recoverMp = clericA.pray(3);
-  tellInfo(clericA);
-  print('실제회복한 량: $recoverMp');
-
-  print('---- clericB 생성 ---');
-  Cleric clericB = Cleric();
-  clericB.selfAid();
-  tellInfo(clericB);
+  // Cleric clericA = Cleric();
+  // clericA.name = 'A';
+  //
+  // print('---- clericA의 초기값 ----');
+  // tellInfo(clericA);
+  //
+  // // 공격당해서 hp -20;
+  // clericA.hp = clericA.hp - 20;
+  // print('---- cleric 공격당한 후 정보 ---');
+  // tellInfo(clericA);
+  //
+  // print('--- selfAid 후 hp 회복 ----');
+  // (clericA.selfAid())
+  //     ? print('hp 회복 했습니다.')
+  //     : print('mp가 5이하라 selfAid()가 실패했습니다.');
+  // tellInfo(clericA);
+  //
+  // print('--- 3초 기도 ---');
+  // int recoverMp = clericA.pray(3);
+  // tellInfo(clericA);
+  // print('실제회복한 량: $recoverMp');
+  //
+  // print('---- clericB 생성 ---');
+  // Cleric clericB = Cleric();
+  // clericB.selfAid();
+  // tellInfo(clericB);
 }
 
 void tellInfo(Cleric cleric) {
-  print('현재 hp : ${cleric.hp}');
-  print('현재 mp : ${cleric.mp}');
+  // print('현재 hp : ${cleric.hp}');
+  // print('현재 mp : ${cleric.mp}');
 }
 
 
