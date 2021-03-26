@@ -8,6 +8,10 @@ tellInfo() 같은 경우 처음에 class 안에 있었는데 캐릭터가 자신
 import 'dart:math';
 
 void main() {
+  print(min(0, 5));
+
+  print(max(0, 5));
+
   Cleric clericA = Cleric();
   clericA.name = 'A';
 
@@ -33,16 +37,11 @@ void main() {
   print('---- clericB 생성 ---');
   Cleric clericB = Cleric();
   clericB.selfAid();
-  clericB.selfAid();
-  tellInfo(clericB);
-  clericB.selfAid();
-  clericB.pray(5);
-  tellInfo(clericB);
 }
 
 void tellInfo(Cleric cleric) {
-  print('현재 hp : $cleric.hp');
-  print('현재 mp : $cleric.mp');
+  print('현재 hp : ${cleric.hp}');
+  print('현재 mp : ${cleric.mp}');
 }
 
 // Hero 타입을 새로 작성
@@ -88,7 +87,9 @@ class Cleric {
     int recoverMp = rnd.nextInt(3) + second;
 
     // MP 회복시켜 주기. 단 max값은 10
-    (mp + recoverMp > maxMp) ? mp = maxMp : mp = mp + recoverMp;
+    //(mp + recoverMp > maxMp) ? mp = maxMp : mp += recoverMp;
+    // min 함수 사용
+    mp = min(mp + recoverMp, maxMp);
 
     // 회복한 량
     return recoverMp;
