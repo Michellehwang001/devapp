@@ -1,7 +1,14 @@
 // Hero 타입을 새로 작성
 import 'package:flutter_app/equipment/sword.dart';
 
+// 프로그램 전체적으로 공유!! 좋은 방법은 아님..
+// Top Level 변수
+// int money = 100;
+
 class Hero {
+  // 공용 자원
+  static int money = 100;
+
   // private 변수로 만들면 맨처음 한번만 셋팅.
   String _name;
   int _hp;

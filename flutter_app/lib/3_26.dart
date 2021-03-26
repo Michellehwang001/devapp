@@ -9,12 +9,16 @@ void main() {
   Hero hero = Hero('Michelle', 50);
   Sword sword = Sword('불의검', 10, 1000, '착용자에게 불데미지 +10');
 
+  // money 가 static변수
+  Hero.money = 80;
+
   // 영웅에게 칼 주기
   hero.sword = sword;
   // Michell
   hero.attack();
 
-  print('${hero.hp}');
 
-  Cleric cleric = Cleric();
+  // 클래릭 생성
+  Cleric cleric = Cleric('clericA', 50, 10);
+  cleric.selfAid();
 }

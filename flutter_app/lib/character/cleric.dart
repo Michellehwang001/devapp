@@ -1,11 +1,14 @@
 import 'dart:math';
 
 class Cleric {
-  final int maxHp = 50;
-  final int maxMp = 10;
+  static final int maxHp = 50;
+  static final int maxMp = 10;
   String name;
   int hp = 50;
   int mp = 10;
+
+  // 생성자
+  Cleric(this.name, this.hp, this.mp);
 
   // MP 5소비로 자신의 HP를 최대 HP까지 회복할 수 있다.
   bool selfAid() {
