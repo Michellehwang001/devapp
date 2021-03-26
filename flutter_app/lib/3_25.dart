@@ -8,10 +8,6 @@ tellInfo() 같은 경우 처음에 class 안에 있었는데 캐릭터가 자신
 import 'dart:math';
 
 void main() {
-  print(min(0, 5));
-
-  print(max(0, 5));
-
   Cleric clericA = Cleric();
   clericA.name = 'A';
 
@@ -89,6 +85,10 @@ class Cleric {
     // MP 회복시켜 주기. 단 max값은 10
     //(mp + recoverMp > maxMp) ? mp = maxMp : mp += recoverMp;
     // min 함수 사용
+    if(maxMp < recoverMp + mp){
+      recoverMp = maxMp - mp;
+    }
+
     mp = min(mp + recoverMp, maxMp);
 
     // 회복한 량
