@@ -1,6 +1,7 @@
 import 'dart:math';
 
 class Cleric {
+  // 접근지정자 _ 추가
   static final int maxHp = 50;
   static final int maxMp = 10;
   String _name;
