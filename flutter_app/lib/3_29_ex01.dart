@@ -1,5 +1,5 @@
 void main() {
-  Word word1 = Word('Hwang Hye Jung');
+  Word word1 = Word('HwAng Hye Jung');
   print(word1.isVowel(1));
   print(word1.isVowel(3));
   print(word1.isConsonant(9));
@@ -14,6 +14,7 @@ class Word {
   // i번째 글자가 모음이면 true a, i, u, e, o
   bool isVowel(int i) {
     String character = letters.substring(i - 1, i);
+    character = character.toLowerCase();
 
     for (var ch in vowelList) {
       if (character == ch) return true;
@@ -25,6 +26,7 @@ class Word {
   // i번째 글자가 자음이면 true
   bool isConsonant(int i) {
     String character = letters.substring(i - 1, i);
+    character = character.toLowerCase();
 
     for (var ch in vowelList) {
       if (character == ch) return false;
