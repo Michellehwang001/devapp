@@ -38,5 +38,8 @@ void main() {
   print('   hwang   '.trim()); // 좌우 공백 제거
   print('   hwang   '.trimRight()); // 왼쪽 공백 제거
 
-  //String str2 = str.split('c');
+  List<String> splitString = 'abcabcabc'.split('c');
+  for (var str in splitString) {
+    print(str);
+  }
 }
