@@ -16,7 +16,7 @@ class Word {
     String character = letters.substring(i - 1, i).toLowerCase();
 
     for (var ch in vowelList) {
-      if (character == ch) return true;
+      if (ch == character) return true;
     }
 
     return false;
@@ -27,7 +27,7 @@ class Word {
     String character = letters.substring(i - 1, i).toLowerCase();
 
     for (var ch in vowelList) {
-      if (character == ch) return false;
+      if (ch == character) return false;
     }
 
     return true;
