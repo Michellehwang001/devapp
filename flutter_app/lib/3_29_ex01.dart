@@ -1,20 +1,28 @@
 void main() {
   Word dish = Word('dish');
   print(dish.toPlural()); // dishes
+
   Word cherry = Word('cherry');
   print(cherry.toPlural()); // cherries
+
   Word clock = Word('clock');
   print(clock.toPlural()); // clocks
+
   Word tax = Word('tax');
   print(tax.toPlural()); // taxes
+
   Word bench = Word('bench');
   print(bench.toPlural()); // benches
+
   Word tomato = Word('tomato');
   print(tomato.toPlural()); // tomatoes
+
   Word baby = Word('baby');
   print(baby.toPlural()); // babies
+
   Word leaf = Word('leaf');
   print(leaf.toPlural()); // leaves
+
   Word live = Word('live');
   print(live.toPlural()); // lives
 }
@@ -43,7 +51,7 @@ class Word {
         letters.endsWith('ch') ||
         letters.endsWith('sh') ||
         letters.endsWith('o')) {
-      return '$letters' + 'es';
+      return letters + 'es';
     }
     //자음 + y -> ies
     else if (letters.endsWith('y')) {
@@ -52,7 +60,7 @@ class Word {
         return (letters.replaceRange(
             letters.length - 1, letters.length, 'ies'));
       } else {
-        return '$letters' + 's';
+        return letters + 's';
       }
     }
     // f로 끝나는 경우 -> ves
@@ -65,7 +73,7 @@ class Word {
     }
     // 보통의 경우 + s
     else {
-      return '$letters' + 's';
+      return letters + 's';
     }
   }
 }
