@@ -25,6 +25,8 @@ void main() {
 
   Word live = Word('live');
   print(live.toPlural()); // lives
+
+  print(live);
 }
 
 class Word {
@@ -43,32 +45,44 @@ class Word {
     return !(vowelList.contains(letters.substring(i - 1, i).toLowerCase()));
   }
 
-  // 복수형으로 변환
+  // 복수형으로
+  // 마지막에 return 하는 형태의 코드가 좋다.
   String toPlural() {
+    String result = '${letters}s';
+
     // s, x, ch, sh, o 로 끝나는 경우
     if (letters.endsWith('s') ||
         letters.endsWith('x') ||
         letters.endsWith('ch') ||
         letters.endsWith('sh') ||
         letters.endsWith('o')) {
-      return letters + 'es';
+      result = letters + 'es';
     }
     //자음 + y -> ies
     else if (letters.endsWith('y') && isConsonant(letters.length - 1)) {
-        return (letters.replaceRange(
-            letters.length - 1, letters.length, 'ies'));
+        result = letters.replaceRange(
+            letters.length - 1, letters.length, 'ies');
     }
     // f로 끝나는 경우 -> ves
     else if (letters.endsWith('f')) {
-      return (letters.replaceRange(letters.length - 1, letters.length, 'ves'));
+      result = letters.replaceRange(letters.length - 1, letters.length, 'ves');
     }
     // fe로 끝나는 경우 -> ves
     else if (letters.endsWith('fe')) {
-      return (letters.replaceRange(letters.length - 2, letters.length, 'ves'));
+      result = letters.replaceRange(letters.length - 2, letters.length, 'ves');
     }
     // 보통의 경우 + s
-    else {
-      return letters + 's';
-    }
+    // else {
+    //   return letters + 's';
+    // }
+
+    return result;
+  }
+
+  @override
+  String toString() {
+    return 'Word{letters: $letters}';
   }
 }
+
+
