@@ -54,14 +54,9 @@ class Word {
       return letters + 'es';
     }
     //자음 + y -> ies
-    else if (letters.endsWith('y')) {
-      // 자음이면
-      if (isConsonant(letters.length - 1)) {
+    else if (letters.endsWith('y') && isConsonant(letters.length - 1)) {
         return (letters.replaceRange(
             letters.length - 1, letters.length, 'ies'));
-      } else {
-        return letters + 's';
-      }
     }
     // f로 끝나는 경우 -> ves
     else if (letters.endsWith('f')) {
