@@ -62,7 +62,9 @@ class Word {
     // fe로 끝나는 경우 -> ves
     else if (letters.endsWith('fe')) {
       return (letters.replaceRange(letters.length - 2, letters.length, 'ves'));
-    } else {
+    }
+    // 보통의 경우 + s
+    else {
       return '$letters' + 's';
     }
   }
