@@ -4,10 +4,9 @@
 void main() {
   Exam exam = Exam();
   int answer = exam.solution(20, 20);
-  if ( answer == 0) {
+  if (answer == 0) {
     print('eq');
-  }
-  else {
+  } else {
     print(answer);
   }
 }
@@ -16,10 +15,9 @@ class Exam {
   int solution(int a, int b) {
     int result = 0;
 
-    if( a > b) {
+    if (a > b) {
       result = a;
-    }
-    else if( a < b) {
+    } else if (a < b) {
       result = b;
     }
 
