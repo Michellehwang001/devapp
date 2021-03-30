@@ -16,20 +16,15 @@ void main() {
 
 class Exam{
   String solution(int m, int n) {
-    String result = '';
-    int temp = 0;
+    String result = m.toString();
+    int temp = m;
 
-    for (int i=0; i < 10; i++) {
-      // 첫번째값
-      if(i == 0) {
-        temp = m;
-      }
+    for (int i=0; i < 9; i++) {
       // 등차수열 계산
-      else {
-        temp += n;
-      }
+      temp += n;
+
       // result값을 만들어 준다
-      result += '$temp ';
+      result += ' $temp';
     }
 
     return result;

@@ -7,29 +7,20 @@
 // 조건에 맞지 않으면 No를 출력하시오
 void main() {
   Exam exam = Exam();
+  print(exam.solution(444444));
   print(exam.solution(33334));
   print(exam.solution(333333));
   print(exam.solution(49000));
-  print(exam.solution(00000));
 }
 
 class Exam {
   String solution(int n) {
-    String result = '';
-    String temp = '';
-    String str = n.toString();
+    String result = n.toString(); // 4444
 
-    for (int i = 0; i < str.length; i++) {
-      // 첫번째글자
-      if (i == 0) {
-        temp = str[0];
-        result = str;
-      } else {
-        // 다른글자일때
-        if (temp != str[i]) {
-          result = 'No';
-          break;
-        }
+    // 4434 일 경우 44 비교, 43비교, 34비교 3번한다.
+    for (int i = 0; i < result.length - 1; i++) {
+      if(result[i] != result[i+1]) {
+        result = 'No';
       }
     }
 
