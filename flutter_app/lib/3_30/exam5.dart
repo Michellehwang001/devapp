@@ -6,8 +6,8 @@ void main() {
   Exam exam = Exam();
   Random rnd = Random();
 
-  print(exam.solution(rnd.nextInt(6)+1));
-  print(exam.solution(rnd.nextInt(6)+1));
+  print(exam.solution(rnd.nextInt(6) + 1));
+  print(exam.solution(rnd.nextInt(6) + 1));
 }
 
 class Exam {
