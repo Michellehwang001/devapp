@@ -15,10 +15,12 @@ class Exam {
     String result = 'Hello ';
 
     for (int i = 0; i < lists.length; i++) {
-      // 마지막
-      if (i != lists.length - 1) {
+      // 마지막보다 작다면 i 가 넘어가더라도 안전하다. !을 쓰는 것보다.
+      if (i < lists.length - 1) {
         result += lists[i] + ', ';
-      } else {
+      }
+      // 마지막
+      else {
         result += lists[i] + '.';
       }
     }
