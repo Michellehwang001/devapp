@@ -10,7 +10,9 @@ class Exam {
   int solution(int a, int b) {
     int result = 0;
 
-    if (a + b < 180) result = 180 - a - b;
+    if (a + b < 180) {
+      result = 180 - a - b;
+    }
 
     return result;
   }

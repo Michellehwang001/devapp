@@ -20,11 +20,13 @@ class Exam{
     String str = n.toString();
 
     for(int i=0; i< str.length; i++) {
+      // 첫번째글자
       if(i == 0) {
         temp = str[0];
         result = str;
       }
       else{
+        // 다른글자일때
         if(temp != str[i]) {
           result = 'No';
           break;

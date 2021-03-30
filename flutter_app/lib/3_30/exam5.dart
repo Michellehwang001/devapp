@@ -9,6 +9,7 @@ void main() {
 class Exam {
   int solution(int n) {
     int result = 0;
+
     result = 7 - n;
 
     return result;
