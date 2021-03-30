@@ -24,9 +24,11 @@ class Exam{
       if(i == 0) {
         temp = m;
       }
+      // 등차수열 계산
       else {
         temp += n;
       }
+      // result값을 만들어 준다
       result += '$temp ';
     }
 
