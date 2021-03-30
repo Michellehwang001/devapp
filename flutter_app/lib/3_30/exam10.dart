@@ -21,11 +21,11 @@ class Exam {
   int solution(int n, String s) {
     int result = 0;
 
-    switch(s) {
-      case "km" :
+    switch (s) {
+      case "km":
         result = toMm(toCm(toM(n)));
         break;
-      case "m" :
+      case "m":
         result = toMm(toCm(n));
         break;
       case "cm":
