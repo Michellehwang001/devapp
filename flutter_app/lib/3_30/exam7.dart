@@ -5,13 +5,13 @@ import 'dart:math';
 
 void main() {
   Exam exam = Exam();
-  print(exam.solution(20, 30));
+  print(exam.solution1(20, 30));
   print(exam.solution2(20, 10));
   print(exam.solution2(20, 20));
 }
 
 class Exam {
-  String solution2(int a, int b) {
+  String solution1(int a, int b) {
     String result = 'eq';
 
     if(a > b) {
@@ -24,7 +24,7 @@ class Exam {
     return result;
   }
 
-  String solution(int a, int b) {
+  String solution2(int a, int b) {
     String result = 'eq';
 
     if(a != b) {
