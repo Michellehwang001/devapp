@@ -11,8 +11,6 @@ void main() {
 
   int N = int.parse(stdin.readLineSync());
 
-  print('$a, $b, $R, $N');
-
   // 공사장, 공원생성
   Construction construction = Construction(a, b, R);
   // 공사을 공원에 셋팅
@@ -24,7 +22,6 @@ void main() {
 
     int x = int.parse(inputLine[0]);
     int y = int.parse(inputLine[1]);
-    print('$x, $y');
 
     // 나무생성
     Tree tree = Tree(x, y);
