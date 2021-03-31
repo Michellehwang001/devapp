@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'dart:math';
 
 void main() {
@@ -16,7 +15,7 @@ void main() {
   // 공사을 공원에 셋팅
   Park park = Park(construction);
 
-  // 나무값 입력받
+  // 나무값 입력
   for (int i = 0; i < N; i++) {
     List<String> inputLine = stdin.readLineSync().split(' ');
 
@@ -25,12 +24,11 @@ void main() {
 
     // 나무생성
     Tree tree = Tree(x, y);
-    // 공사장 나무에 추가
+    // 공원에 나무 추가
     park.trees.add(tree);
   }
 
   // 시끄러운지 판단해서 출력
-  print('== 출력 ==');
   for (int i = 0; i < park.trees.length; i++) {
     if (construction.isNoisy(park.trees[i]) == true) {
       print('noisy');
