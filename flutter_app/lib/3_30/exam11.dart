@@ -14,13 +14,14 @@ class Exam {
   static final String aToZ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   int solution(String s) {
-    int result = 0;
-    for (int i = 0; i < aToZ.length; i++) {
-      if (aToZ[i] == s) {
-        result = i + 1;
-        break;
-      }
-    }
+    int result = aToZ.indexOf(s) + 1;
+
+    // for (int i = 0; i < aToZ.length; i++) {
+    //   if (aToZ[i] == s) {
+    //     result = i + 1;
+    //     break;
+    //   }
+    // }
     return result;
   }
 }
