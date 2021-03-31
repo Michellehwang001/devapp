@@ -33,13 +33,12 @@ void main() {
   }
 
   // 시끄러운지 판단해서 출력
-  print ('== 출력 ==');
-  for (int i = 0; i< park.trees.length; i++) {
-    if(construction.isNoisy(park.trees[i]) == true) {
-      print ('noisy');
-    }
-    else {
-      print ('silent');
+  print('== 출력 ==');
+  for (int i = 0; i < park.trees.length; i++) {
+    if (construction.isNoisy(park.trees[i]) == true) {
+      print('noisy');
+    } else {
+      print('silent');
     }
   }
 }
