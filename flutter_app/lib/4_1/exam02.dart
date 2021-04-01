@@ -9,7 +9,6 @@ void main() {
 
 class Exam {
   String s;
-
   Exam(this.s);
 
   int solution() {
