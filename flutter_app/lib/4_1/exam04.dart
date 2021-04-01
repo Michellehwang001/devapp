@@ -19,7 +19,7 @@ class Exam {
 
     for (int i = 0; i < inputLine.length; i++) {
       result += inputLine[i][0];
-      if (i != inputLine.length - 1){
+      if (i < inputLine.length - 1){
         result += '.';
       }
     }
