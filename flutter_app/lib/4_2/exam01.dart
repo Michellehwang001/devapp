@@ -2,7 +2,6 @@ import 'dart:io';
 
 void main() {
   //List<int> inputLine = stdin.readLineSync().split(' ').map((e) => int.parse(e));
-
   List<String> inputLine = stdin.readLineSync().split(' ');
   int N = int.parse(inputLine[0]);
   int M = int.parse(inputLine[1]);
