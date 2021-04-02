@@ -18,6 +18,7 @@ class Exam {
   String solution() {
     String result = 'No';
 
+    // 홀수, 짝수 쌍인 경우 Yes
     if ((N % 2 == 0 && M % 2 == 1) || (N % 2 == 1 && M % 2 == 0)) {
       result = 'Yes';
     }
