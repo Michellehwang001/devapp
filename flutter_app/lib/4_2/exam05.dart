@@ -4,9 +4,9 @@ import 'dart:io';
 void main() {
   List<int> inputs = [];
 
+  // 5개의 입력값
   for (int i = 0; i < 5; i++) {
-    String str = stdin.readLineSync();
-    int num = int.parse(str);
+    int num = int.parse(stdin.readLineSync());
     inputs.add(num);
   }
 
