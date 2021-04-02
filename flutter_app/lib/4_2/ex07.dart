@@ -3,6 +3,7 @@ import 'dart:io';
 
 void main() {
   List<String> inputLine = stdin.readLineSync().split(' ');
+
   Exam exam = Exam(inputLine[0], inputLine[1], inputLine[2], inputLine[3]);
   print(exam.solution());
 }
