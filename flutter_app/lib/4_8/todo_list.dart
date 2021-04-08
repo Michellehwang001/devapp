@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  // firebase 사용하면서 추가
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(MyApp());
+}
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -33,6 +42,8 @@ class _TodoListPageState extends State<TodoListPage> {
 
   @override
   Widget build(BuildContext context) {
+    Query query = FirebaseFirestore.instance.collection('todo');
+
     return Scaffold(
       appBar: AppBar(
         title: Text('남은 할 일'),
@@ -54,10 +65,20 @@ class _TodoListPageState extends State<TodoListPage> {
                 ),
               ],
             ),
-            Expanded(
-              child: ListView(
-                children: _items.map((todo) => _buildItemWidget(todo)).toList(),
-              ),
+            StreamBuilder<QuerySnapshot>(
+              stream: query.snapshots(),
+              builder: (context, snapshot) {
+                // 예외처리...
+                if(!snapshot.hasData) {
+                  return CircularProgressIndicator();
+                }
+                final documents = snapshot.data.docs;
+                return Expanded(
+                  child: ListView(
+                    children: documents.map((doc) => _buildItemWidget(doc)).toList(),
+                  ),
+                );
+              }
             ),
           ],
         ),
@@ -65,7 +86,9 @@ class _TodoListPageState extends State<TodoListPage> {
     );
   }
 
-  Widget _buildItemWidget(Todo todo) {
+  Widget _buildItemWidget(DocumentSnapshot doc) {
+    final todo = Todo(doc['title'], isDone: doc['isDone']);
+
     return ListTile(
       onTap: () => _toggleTodo(todo), // 완료/미완료
       title: Text(
@@ -113,5 +136,5 @@ class Todo {
   bool isDone = false;
   String title;
 
-  Todo(this.title);
+  Todo(this.title, {this.isDone = false});
 }
