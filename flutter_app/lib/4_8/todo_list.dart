@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() async {
   // firebase 사용하면서 추가
@@ -9,7 +9,6 @@ void main() async {
 
   runApp(MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -66,20 +65,21 @@ class _TodoListPageState extends State<TodoListPage> {
               ],
             ),
             StreamBuilder<QuerySnapshot>(
-              stream: query.snapshots(),
-              builder: (context, snapshot) {
-                // 예외처리...
-                if(!snapshot.hasData) {
-                  return CircularProgressIndicator();
-                }
-                final documents = snapshot.data.docs;
-                return Expanded(
-                  child: ListView(
-                    children: documents.map((doc) => _buildItemWidget(doc)).toList(),
-                  ),
-                );
-              }
-            ),
+                stream: query.snapshots(),
+                builder: (context, snapshot) {
+                  // 예외처리...
+                  if (!snapshot.hasData) {
+                    return CircularProgressIndicator();
+                  }
+                  final documents = snapshot.data.docs;
+                  return Expanded(
+                    child: ListView(
+                      children: documents
+                          .map((doc) => _buildItemWidget(doc))
+                          .toList(),
+                    ),
+                  );
+                }),
           ],
         ),
       ),
@@ -102,7 +102,7 @@ class _TodoListPageState extends State<TodoListPage> {
       ),
       trailing: IconButton(
         icon: Icon(Icons.delete_forever),
-        onPressed: () => _deleteTodo(todo), // 쓰레기통 클릭 시 삭제되도록 수정
+        onPressed: () => _deleteTodo(doc), // 쓰레기통 클릭 시 삭제되도록 수정
       ),
     );
   }
@@ -110,18 +110,34 @@ class _TodoListPageState extends State<TodoListPage> {
   // 할 일 추가
   void _addTodo(Todo todo) {
     setState(() {
+      // 콜백 callBack 방식 - 콜백지옥이 될 수 있다 - 대안 async - await
+      // Promise
       if (todo.title.isNotEmpty) {
-        _items.add(todo);
-        _todoController.text = '';
+        CollectionReference query =
+            FirebaseFirestore.instance.collection('todo');
+        query.add({
+          'title': todo.title,
+          'isDone': todo.isDone,
+        }).then((value) {
+          _todoController.text = '';
+        }).catchError((error) {
+          // 다이어로그 띄우기
+        });
       }
     });
   }
 
   // 할 일 삭제
-  void _deleteTodo(Todo todo) {
-    setState(() {
-      _items.remove(todo);
-    });
+  void _deleteTodo(DocumentSnapshot todo) {
+    CollectionReference query = FirebaseFirestore.instance.collection('todo');
+
+    query
+        .doc(todo.id)
+        .delete()
+        .then((value) => print('성공'))
+        .catchError((error) => print('실패'));
+
+    //_items.remove(todo);
   }
 
   // 할 일 완료/미완료
