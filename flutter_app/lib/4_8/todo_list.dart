@@ -113,14 +113,14 @@ class _TodoListPageState extends State<TodoListPage> {
     // Promise
     if (todo.title.isNotEmpty) {
       CollectionReference query = FirebaseFirestore.instance.collection('todo');
-      DocumentReference value = await query.add({
+
+      // Map<String, dynamic>
+      var data = {
         'title': todo.title,
         'isDone': todo.isDone,
-      }).then((value) {
-        _todoController.text = '';
-      }).catchError((error) {
-        // 다이어로그 띄우기
-      });
+      };
+
+      DocumentReference value = await query.add(data);
     }
   }
 
