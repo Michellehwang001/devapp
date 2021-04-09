@@ -90,7 +90,7 @@ class _TodoListPageState extends State<TodoListPage> {
     final todo = Todo(doc['title'], isDone: doc['isDone']);
 
     return ListTile(
-      onTap: () => _toggleTodo(todo), // 완료/미완료
+      onTap: () => _toggleTodo(doc), // 완료/미완료
       title: Text(
         todo.title, // 할일
         style: todo.isDone
@@ -139,10 +139,22 @@ class _TodoListPageState extends State<TodoListPage> {
   }
 
   // 할 일 완료/미완료
-  void _toggleTodo(Todo todo) {
-    setState(() {
-      todo.isDone = !todo.isDone;
-    });
+  void _toggleTodo(DocumentSnapshot todo) {
+    CollectionReference query = FirebaseFirestore.instance.collection('todo');
+
+    Future<void> updateUser() {
+      return query
+          .doc(todo.id)
+          .update({'isDone': !todo['isDone']})
+          .then((value) => print("Updated 성공"))
+          .catchError((error) => print("Failed to update user: $error"));
+    }
+
+    updateUser();
+
+    // setState(() {
+    //   todo.isDone = !todo.isDone;
+    // });
   }
 }
 
