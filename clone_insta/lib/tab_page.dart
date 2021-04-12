@@ -1,3 +1,6 @@
+import 'package:clone_insta/account_page.dart';
+import 'package:clone_insta/home_page.dart';
+import 'package:clone_insta/search_page.dart';
 import 'package:flutter/material.dart';
 
 class TabPage extends StatefulWidget {
@@ -8,9 +11,9 @@ class TabPage extends StatefulWidget {
 class _TabPageState extends State<TabPage> {
   int _selectedIndex = 0;
   List<Widget> _pages = [
-    Text('page1'),
-    Text('page2'),
-    Text('page3'),
+    HomePage(),
+    SearchPage(),
+    AccountPage(),
   ];
 
   @override
@@ -18,6 +21,7 @@ class _TabPageState extends State<TabPage> {
     return Scaffold(
       body: Center(child: _pages[_selectedIndex]),
       bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.black,
         currentIndex: _selectedIndex,
         onTap: _OnItemTapped,
         items: <BottomNavigationBarItem>[
