@@ -1,3 +1,4 @@
+// 입력받은 값으로 등차수열
 import 'dart:io';
 
 void main() {

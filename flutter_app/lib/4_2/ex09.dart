@@ -6,9 +6,12 @@ void main() {
 
   List<String> inputLine = stdin.readLineSync().split(' ');
 
+  int H = int.parse(inputLine[0]);
+  int W = int.parse(inputLine[1]);
+
   // H값 행만큼 readLineSync() 해준다.
-  for (int i = 0; i < int.parse(inputLine[0]); i++) {
-    List<String> inputLine = stdin.readLineSync().split(' ');
+  for (int i = 0; i < H; i++) {
+    List<int> inputLine = stdin.readLineSync().split(' ').map((e) => int.parse(e)).toList();
     inputLines.add(inputLine);
   }
 

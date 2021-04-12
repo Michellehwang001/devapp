@@ -3,6 +3,7 @@
 void main() {
   Exam exam = Exam();
   print(exam.solution(-100));
+  print(exam.solution2(10));
 }
 
 class Exam {
@@ -10,5 +11,15 @@ class Exam {
     int result = n;
 
     return result.abs();
+  }
+
+  int solution2(int n) {
+    int result = n;
+
+    if (n < 0) {
+      result = n * -1;
+    }
+
+    return result;
   }
 }
