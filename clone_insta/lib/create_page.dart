@@ -10,7 +10,8 @@ class CreatePage extends StatefulWidget {
 
 class _CreatePageState extends State<CreatePage> {
   final textEdigingController = TextEditingController();
-  File _image;
+  final ImagePicker _picker = ImagePicker();
+  PickedFile _image;
 
   @override
   void dispose() {
@@ -38,7 +39,8 @@ class _CreatePageState extends State<CreatePage> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          _image == null ? Text('No Image') : Image.file(_image),
+          //_image == null ? Text('No Image') : Image.file(_image),
+          _image == null ? Text('No Image') : Image.file(File(_image.path)),
           TextField(
             decoration: InputDecoration(hintText: '내용을 입력하세요!'),
             controller: textEdigingController,
@@ -49,12 +51,18 @@ class _CreatePageState extends State<CreatePage> {
   }
 
   Future _getImage() async {
-    File image = await ImagePicker.pickImage(source: ImageSource.gallery);
-
-    setState(() {
-      _image = image;
-    });
+    PickedFile image = await _picker.getImage(source: ImageSource.gallery);
+      setState(() {
+        _image = image;
+      });
   }
+  // Future _getImage() async {
+  //   File image = await ImagePicker.pickImage(source: ImageSource.gallery);
+  //
+  //   setState(() {
+  //     _image = image;
+  //   });
+  // }
 }
 
   //void _getImage(ImageSource source, {BuildContext context}) {

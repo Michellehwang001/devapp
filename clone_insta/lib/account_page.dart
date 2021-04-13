@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AccountPage extends StatefulWidget {
   @override
@@ -6,12 +8,19 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.exit_to_app), onPressed: () {})
+          IconButton(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                _googleSignIn.signOut();
+              })
         ],
       ),
       body: _buildBody(),
@@ -66,12 +75,20 @@ class _AccountPageState extends State<AccountPage> {
                   )
                 ],
               ),
-              Padding(padding: EdgeInsets.all(8.0),),
-              Text('황혜정', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+              ),
+              Text(
+                '황혜정',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
             ],
           ),
-          Text('0\n게시물', textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 18.0),),
+          Text(
+            '0\n게시물',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 18.0),
+          ),
           Text(
             '1\n팔로워',
             textAlign: TextAlign.center,
