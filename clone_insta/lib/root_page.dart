@@ -3,8 +3,6 @@ import 'package:clone_insta/tab_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'package:firebase_core/firebase_core.dart';
-
 class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

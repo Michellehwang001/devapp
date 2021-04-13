@@ -1,4 +1,3 @@
-import 'package:clone_insta/tab_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -22,7 +21,6 @@ class LoginPage extends StatelessWidget {
             Padding(padding: EdgeInsets.all(30.0)),
             SignInButton(Buttons.Google, onPressed: () {
               _handleSignIn().then((user) {
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TabPage(user)));
                 print(user);
               });
             })
@@ -36,9 +34,9 @@ class LoginPage extends StatelessWidget {
   Future<FirebaseUser> _handleSignIn() async {
     GoogleSignInAccount googleUser = await _googleSignIn.signIn();
     GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-    FirebaseUser user = await _auth.signInWithCredential(
+    FirebaseUser user = (await _auth.signInWithCredential(
         GoogleAuthProvider.getCredential(
-            idToken: googleAuth.idToken, accessToken: googleAuth.accessToken));
+            idToken: googleAuth.idToken, accessToken: googleAuth.accessToken))).user;
 
     return user;
   }
