@@ -3,6 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AccountPage extends StatefulWidget {
+  // 인증된 유저정보를 가져온다.
+  final FirebaseUser user;
+
+  AccountPage(this.user);
+
   @override
   _AccountPageState createState() => _AccountPageState();
 }
@@ -28,6 +33,7 @@ class _AccountPageState extends State<AccountPage> {
   }
 
   Widget _buildBody() {
+
     return Padding(
       padding: EdgeInsets.all(16.0),
       child: Row(
@@ -42,8 +48,7 @@ class _AccountPageState extends State<AccountPage> {
                     width: 80.0,
                     height: 80.0,
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          'https://avatars.githubusercontent.com/u/80811560?v=4'),
+                      backgroundImage: NetworkImage(widget.user.photoUrl),
                     ),
                   ),
                   Container(
@@ -79,7 +84,7 @@ class _AccountPageState extends State<AccountPage> {
                 padding: EdgeInsets.all(8.0),
               ),
               Text(
-                '황혜정',
+                widget.user.displayName,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ],
