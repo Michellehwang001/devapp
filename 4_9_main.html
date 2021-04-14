@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>회원가입</title>
+        <meta charset="utf-8">
+        <style>
+            table,
+            td,
+            th {
+                border: 1px solid black;
+                border-collapse: collapse;
+                border-spacing: 2px;
+                padding: 10px;
+            }
+            tfoot {
+                text-align: center;
+            }
+
+            #cn {
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="frm1" method="POST" action="4_9_1.html">
+            <table border="1" align="center" width="100%" height="100%">
+                <tr>
+                    <td
+                        rowspan="7"
+                        style="background-color: green; text-align: center;"
+                        width="40%">회원가입</td>
+                    <td id="cn">이름</td>
+                    <td><input type="text" name="name" autofocus="autofocus"></td>
+                </tr>
+                <tr>
+                    <td id="cn">비번</td>
+                    <td><input type="password"></td>
+                </tr>
+                <tr>
+                    <td id="cn">전화번호</td>
+                    <td>
+                        <select name="tel1">
+                            <option value="02">02</option>
+                            <option value="031">031</option>
+                            <option value="010">010</option>
+                        </select>
+                        <input type="tel" id="phone" name="tel2" size="5" pattern="[0-9]{4}">
+                        <input type="tel" id="phone" name="tel3" size="5" pattern="[0-9]{4}">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="cn">프로필</td>
+                    <td>
+                        <input type="file" name="profiile">
+                    </td>
+                </tr>
+                <tr id="cn">
+                    <td colspan="2">자기소개</td>
+                </tr>
+                <tr id="cn">
+                    <td colspan="2">
+                        <textarea cols="80" rows="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="cn">
+                        <input type="submit" value="전송">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

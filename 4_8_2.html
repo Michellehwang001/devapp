@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            table,
+            td,
+            th {
+                border: 1px solid black;
+                border-collapse: collapse;
+                border-spacing: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>회원가입</h3>
+        <h4>기본정보</h4>
+        <form method="POST" action="result.html">
+            <p>아이디 :
+                <input
+                    type="text"
+                    name="id"
+                    size="10"
+                    value="ibbuni"
+                    maxlength="14"
+                    autofocus="autofocus"></p>
+            <p>이름 :
+                <input type="text" name="id" size="10" maxlength="10"></p>
+            <p>패스워드 :
+                <input type="password" size="10"></p>
+            <p>패스워드 확인:
+                <input type="password" size="10"></p>
+            <p>전화번호1 :
+                <input type="number" size="15"></p>
+            <p>
+                전화번호2(형식 000-0000-0000) :
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+            </p>
+
+            <p>이메일:
+                <input type="text" name="email">
+                <select name="select_email">
+                    <option value="">직접입력</option>
+                    <option value="daum.net">daum.net</option>
+                    <option value="gamil.com">gmail.com</option>
+                    <option value="naver.com">naver.com</option>
+                </select>
+            </p>
+            <p>생년월일
+                <input type="date"></p>
+            <p>성별
+                <input type="radio" name="gender" value="male">
+                남자
+                <input type="radio" name="gender" value="female" checked="checked">
+                여자</p>
+            <p>취미
+                <input type="checkbox" checked="checked">JavaScript/JQuery
+                <input type="checkbox">HTML/CSS
+                <input type="checkbox">Java
+                <input type="checkbox">Ruby
+            </p>
+            <p>자기소개</p>
+            <p>
+                <textarea rows="6" cols="50"></textarea>
+            </p>
+            <p>
+                프로필이미지
+                <input type="file">
+            </p>
+
+            <input type="submit" value="저장"></button>
+        <button>취소</button>
+    </form>
+</body>
+</html>

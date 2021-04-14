@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>
+            회원가입
+        </title>
+        <meta charset="utf-8">
+        <style>
+            table,
+            td,
+            th {
+                border: 1px solid black;
+                border-collapse: collapse;
+                border-spacing: 2px;
+                padding: 10px;
+            }
+            tfoot {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="frm1" method="POST" action="my_tube.html">
+            <table border="1" align="center" width="50%">
+                <thead>
+                    <tr>
+                        <th colspan="2">회원가입</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" name="id" autofocus="autofocus"></td>
+                    </tr>
+                    <tr>
+                        <td>패스워드</td>
+                        <td><input type="password"></td>
+                    </tr>
+                    <tr>
+                        <td>직업</td>
+                        <td>
+                            <select>
+                                <option>요리사</option>
+                                <option>엔지니어</option>
+                                <option>변호사</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>프로필</td>
+                        <td><input type="file"></td>
+                    </tr>
+                    <tr>
+                        <td>취미</td>
+                        <td>
+                            <input type="checkbox" checked="checked">JavaScript/JQuery
+                            <input type="checkbox">HTML/CSS
+                            <input type="checkbox">Java
+                            <input type="checkbox">Ruby
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>성별</td>
+                        <td>
+                            남
+                            <input type="radio" name="gender" value="male">
+                            여
+                            <input type="radio" name="gender" value="female" checked="checked">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">자기소개</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <textarea cols="80" rows="10"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="전송">
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </body>
+</html>
