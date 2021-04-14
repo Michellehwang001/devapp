@@ -37,16 +37,16 @@ class DetailPage extends StatelessWidget {
                         document['email'],
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        document['displayName']
-                      )
+                      Text(document['displayName'])
                     ],
                   ),
                 )
               ],
             ),
           ),
-          Image.network(document['photoUrl']),
+          Hero(
+              tag: document['photoUrl'],
+              child: Image.network(document['photoUrl'])),
           Padding(
             padding: const EdgeInsets.all(9.0),
             child: Text(document['contents']),

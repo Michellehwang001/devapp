@@ -2,6 +2,7 @@
     package="com.findinghomez.clone_insta">
    <application
         android:label="clone_insta"
+        android:requestLegacyExternalStorage="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
-  final FirebaseUser user;
+  final User user;
 
   SearchPage(this.user);
 
@@ -34,14 +34,14 @@ class _SearchPageState extends State<SearchPage> {
 
   Widget _buildBody() {
     return StreamBuilder(
-      stream: Firestore.instance.collection('test01').snapshots(),
+      stream: FirebaseFirestore.instance.collection('test01').snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if(!snapshot.hasData) {
           return Center(child: CircularProgressIndicator());
         }
 
         // ?? 널일 때 초기화
-        var items = snapshot.data.documents ?? [];
+        var items = snapshot.data.docs ?? [];
 
         return GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -59,15 +59,20 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget _buildListItem(BuildContext context, document) {
-    return InkWell(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return DetailPage(document);
-        }));
-      },
-      child: Image.network(
-        document['photoUrl'],
-        fit: BoxFit.cover,
+    return Hero(
+      tag: document['photoUrl'],
+      child: Material(
+        child: InkWell(
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return DetailPage(document);
+            }));
+          },
+          child: Image.network(
+            document['photoUrl'],
+            fit: BoxFit.cover,
+          ),
+        ),
       ),
     );
   }

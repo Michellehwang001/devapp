@@ -31,31 +31,30 @@ class LoginPage extends StatelessWidget {
   }
 
   // Future 비동기
-  Future<FirebaseUser> _handleSignIn() async {
-    GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-    FirebaseUser user = (await _auth.signInWithCredential(
-        GoogleAuthProvider.getCredential(
-            idToken: googleAuth.idToken, accessToken: googleAuth.accessToken))).user;
+  // Future<FirebaseUser> _handleSignIn() async {
+  //   GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+  //   GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+  //   FirebaseUser user = (await _auth.signInWithCredential(
+  //       GoogleAuthProvider.getCredential(
+  //           idToken: googleAuth.idToken, accessToken: googleAuth.accessToken))).user;
+  //
+  //   return user;
+  // }
 
-    return user;
-  }
+Future<UserCredential> _handleSignIn() async {
+  // Trigger the authentication flow
+  final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
 
-// firebase 와 연동하기 위해
-// Future<UserCredential> _handleSignIn() async {
-//   // Trigger the authentication flow
-//   final GoogleSignInAccount googleUser = await GoogleSignIn().signIn();
-//
-//   // Obtain the auth details from the request
-//   final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
-//
-//   // Create a new credential
-//   final GoogleAuthCredential credential = GoogleAuthProvider.credential(
-//     accessToken: googleAuth.accessToken,
-//     idToken: googleAuth.idToken,
-//   );
-//
-//   // Once signed in, return the UserCredential
-//   return await FirebaseAuth.instance.signInWithCredential(credential);
-// }
+  // Obtain the auth details from the request
+  final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+
+  // Create a new credential
+  final GoogleAuthCredential credential = GoogleAuthProvider.credential(
+    accessToken: googleAuth.accessToken,
+    idToken: googleAuth.idToken,
+  );
+
+  // Once signed in, return the UserCredential
+  return await FirebaseAuth.instance.signInWithCredential(credential);
+}
 }

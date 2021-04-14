@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AccountPage extends StatefulWidget {
   // 인증된 유저정보를 가져온다.
-  final FirebaseUser user;
+  //final FirebaseUser user;
+  final User user;
 
   AccountPage(this.user);
 
@@ -14,7 +16,20 @@ class AccountPage extends StatefulWidget {
 
 class _AccountPageState extends State<AccountPage> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+  int _postCount  = 0;
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // email 이 나라면
+    FirebaseFirestore.instance.collection('test01').where('email', isEqualTo: widget.user.email).get()
+    .then((querySnapshot){
+      setState((){
+        _postCount = querySnapshot.docs.length;
+      });
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +63,7 @@ class _AccountPageState extends State<AccountPage> {
                     width: 80.0,
                     height: 80.0,
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(widget.user.photoUrl),
+                      backgroundImage: NetworkImage(widget.user.photoURL),
                     ),
                   ),
                   Container(
@@ -89,8 +104,9 @@ class _AccountPageState extends State<AccountPage> {
               ),
             ],
           ),
+          // 한번만 호출
           Text(
-            '0\n게시물',
+            '$_postCount\n게시물',
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 18.0),
           ),
