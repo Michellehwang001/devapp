@@ -26,6 +26,17 @@ class Main extends StatefulWidget {
 class _MainState extends State<Main> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        appBar: AppBar(
+            title: Text('미세먼지앱'),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              Text('현재 위치 미세먼지', style: TextStyle(fontSize: 25),),
+            ],
+          ),
+        ),
+    );
   }
 }
