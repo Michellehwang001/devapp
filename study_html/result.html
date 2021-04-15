@@ -2,6 +2,11 @@
     <head>
         <meta charset="utf-8">
         <style>
+            table {
+                width: 50%;
+                height: 100%;
+                text-transform: uppercase;
+            }
             table,
             td,
             th {
@@ -9,20 +14,35 @@
                 border-collapse: collapse;
                 border-spacing: 2px;
             }
+            .indent_5 {
+                text-indent: 5em;
+            }
+            .align_left {
+                text-align: left;
+            }
+            .align_right {
+                text-align: right;
+            }
+            .align_center {
+                text-align: center;
+            }
+            .background_red {
+                background-color: red;
+            }
         </style>
     </head>
     <body>
-        <table height="100%">
-            <tr width="99%">
-                <th colspan="2" width="66%">1</th>
-                <th rowspan="2" width="33%">2</th>
+        <table>
+            <tr">
+                <th colspan="2" width="66%" class="align_left">왼쪽 정렬</th>
+                <th rowspan="2" width="33%" class="align_right">오른쪽 정렬</th>
             </tr>
             <tr>
-                <td rowspan="2" width="33%">4</td>
-                <td><img src="./img/idol.jpg" width="50%"></td>
+                <td rowspan="2" width="33%" class="background_red">Red</td>
+                <td class="align_center"><img src="./img/idol.jpg" width="50%"></td>
             </tr>
             <tr>
-                <td colspan="2">3</td>
+                <td colspan="2" class="align_center">가운데 정렬</td>
             </tr>
         </table>
     </body>

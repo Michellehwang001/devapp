@@ -1,0 +1,25 @@
+.border1 {
+    display: inline-block;
+    width: 90%;
+    height: 100px;
+    line-height: 30px;
+    padding: 10px;
+    margin: 10px;
+    background-color: gold;
+    color: #567895;
+    z-index: 1;
+}
+.border2 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    line-height: 30px;
+    margin: 10px;
+    color: #567895;
+    background-color: blue;
+    overflow: scroll;
+    z-index: 10;
+}
