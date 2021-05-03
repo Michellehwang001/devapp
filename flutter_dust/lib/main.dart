@@ -59,18 +59,18 @@ class _MainState extends State<Main> {
               ),
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: Icon(Icons.refresh),
+                onPressed: () {},
+                child: Icon(Icons.refresh),
                 style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                    backgroundColor: MaterialStateProperty.all<Color>(Colors.orange),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                            //side: BorderSide(color: Colors.red)
-                        )
-                    )
-               )
+                  foregroundColor: MaterialStateProperty.all<Color>(Colors.red),
+                  backgroundColor:
+                      MaterialStateProperty.all<Color>(Colors.orange),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    //side: BorderSide(color: Colors.red) // border line color
+                  )),
+                ),
             ),
           ],
         ),
